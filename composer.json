@@ -1,9 +1,9 @@
 {
-    "name": "hcodebr/ecommerce",
+    "name": "robson-riber/ecommerce",
     "authors": [
         {
-            "name": "Hcode Treinamentos",
-            "email": "suporte@hcode.com.br"
+            "name": "Robson Ribeiro",
+            "email": "robson.riber777@gmail.com"
         }
     ],
     "require": {
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\hcodebr\\php-classes\\src"
+            "Hcode\\": "vendor\\hcodebr\\php-classes\\src"
         }
     }
 }
