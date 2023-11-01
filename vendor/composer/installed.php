@@ -3,7 +3,7 @@
         'name' => 'robson-riber/ecommerce',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '1d1a914b99688976973676aadb5d267228364b8b',
+        'reference' => 'e9417a320a2ea8cd9d156c36dee927502f557c63',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'phpmailer/phpmailer' => array(
-            'pretty_version' => 'v5.2.22',
-            'version' => '5.2.22.0',
-            'reference' => 'b18cb98131bd83103ccb26a888fdfe3177b8a663',
+            'pretty_version' => 'v6.8.1',
+            'version' => '6.8.1.0',
+            'reference' => 'e88da8d679acc3824ff231fdc553565b802ac016',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpmailer/phpmailer',
             'aliases' => array(),
@@ -31,7 +31,7 @@
         'robson-riber/ecommerce' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '1d1a914b99688976973676aadb5d267228364b8b',
+            'reference' => 'e9417a320a2ea8cd9d156c36dee927502f557c63',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
