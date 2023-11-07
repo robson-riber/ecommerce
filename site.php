@@ -62,30 +62,51 @@ $app->get("/cart", function(){
 
 	$cart = Cart::getFromSession();
 
+	//echo ("aqui 1");
+	//exit;
+
 	$page = new Page();
 
-	$page->setTpl("cart", [
+	$page->setTpl("cart");
+
+	/*$page->setTpl("cart", [
 		'cart' => $cart->getValues(),
 		'products' => $cart->getProducts()
-	]);
+	]);*/
+
 });
 
 
 $app->get("/cart/:idproduct/add", function($idproduct){
 
+	//echo("arg1 - linha 82 site.php");
+	//echo ($idproduct);
+	//exit;
+
 	$product = new Product();
 
 	$product->get((int) $idproduct);
 
+	//echo "dados do produto\n";
+	//var_dump($product);
+
 	$cart = Cart::getFromSession();
 
-	var_dump($cart);
-	exit;
-	
-	$cart->teste();
-	exit;
+	//$qtd = (isset($_GET['qtd'])) ? (int)$_GET['qtd'] : 1;
 
-	//$cart->addProduct($product);
+	//for ($i = 0; $i < $qtd; $i++)
+	//{
+	//	$cart->addProduct($product);
+	//}
+
+	//echo "dados daaaaa getFromSession";
+	//echo "======\n";
+
+	//var_dump($cart);
+	
+	//exit;
+
+	$cart->addProduct($product);
 
 	header("Location: /cart");
 	exit;

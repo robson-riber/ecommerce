@@ -12,13 +12,20 @@ class Cart extends Model{
 
 	public static function getFromSession()
 	{
+
 		$cart = new Cart();
 
 		if (isset($_SESSION[Cart::SESSION]) && (int)$_SESSION[Cart::SESSION]['idcart'] > 0 ) {
-
+			
 			$cart->get((int) $_SESSION[Cart::SESSION]['idcart']);
+
+			//echo "cai aqui linha 22 - cart.php.";
+			//exit;
 		
 		} else {
+
+			//echo "cai aqui linha 27 - cart.php.";
+			//exit;
 
 			$cart->getFromSessionID();
 
@@ -38,7 +45,10 @@ class Cart extends Model{
 				$cart->setData($data);
 
 				$cart->save();
-
+				
+				//echo "string linha 56 - getFromSession";
+				//exit;
+				
 				$cart->setToSession();
 
 			}
@@ -50,6 +60,9 @@ class Cart extends Model{
 	public function setToSession(){
 
 		$_SESSION[Cart::SESSION] = $this->getValues();
+
+		//var_dump($_SESSION[Cart::SESSION]);
+		//exit;
  	}
 
 
@@ -76,9 +89,16 @@ class Cart extends Model{
 			':idcart' => $idcart
 		]);
 
+		//var_dump($results);
+		//exit;
+
 		if (count($results) > 0 ){
 
 			$this->setData($results[0]);
+
+			//echo "meu carrinho está ok";
+			//exit;
+
 		}
 	}
 
@@ -109,10 +129,12 @@ class Cart extends Model{
 
 
 	//public function addProduct(Product $product)
-	public function addProduct()
+	public function addProduct(Product $product)
 	{
+		//echo "cheguei aqui";
+		//exit;
 
-		echo "cheguei aqui";
+		var_dump($product);
 		exit;
 
 

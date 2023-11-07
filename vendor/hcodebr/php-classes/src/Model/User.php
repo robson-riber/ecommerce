@@ -18,6 +18,9 @@ class User extends Model{
 		$user = new User();
 
 		if (isset($_SESSION[User::SESSION]) && (int) $_SESSION[User::SESSION]['iduser'] > 0 ){
+
+			//var_dump($_SESSION[User::SESSION]);
+
 			$user->setData($_SESSION[User::SESSION]);
 		}
 
@@ -27,6 +30,9 @@ class User extends Model{
 
 	public static function checkLogin($inadmin = true)
 	{
+		//echo "sou admin???";
+		//echo "$inadmin";
+
 		// se não estive definida - criada 
 		// OU se for false
 		// e se o valor do campo iduser mão for maior que 0
@@ -36,10 +42,13 @@ class User extends Model{
 		 	|| !$_SESSION[User::SESSION] 
 			|| !(int)$_SESSION[User::SESSION]["iduser"] > 0 
 		){
-			//Não está logado
+			//echo "//Não está logado";
+			//exit;
 			return false;
+		
 		} else {
 
+			
 			if ($inadmin === true && (bool)$_SESSION[User::SESSION]['inadmin'] === true ){
 
 				return true;
@@ -47,7 +56,7 @@ class User extends Model{
 			} else if ($inadmin === false) {
 
 				return true;
-
+	
 			} else {
 
 				return false;
@@ -90,8 +99,9 @@ class User extends Model{
 
 
 	public static function verifyLogin($inadmin = true)
-	{
-		if (User::checkLogin($inadmin)){		
+	{	
+
+		if ( ! User::checkLogin($inadmin)){		
 			header("Location: /admin/login");
 			exit;
 		}

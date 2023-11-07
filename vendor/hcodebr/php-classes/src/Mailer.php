@@ -14,7 +14,7 @@ use PHPMailer\PHPMailer\Exception;
 class Mailer{
 
 	const USERNAME = 'salotex@salotex.com.br';
-	const PASSWORD =  'xyz';
+	const PASSWORD =  'xa';
 	const NAME_FROM = 'Salotex';
 
 	private $mail;
